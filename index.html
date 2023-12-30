@@ -1,0 +1,17 @@
+<!-- A HTML file that imports a web worker  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web Worker ES Module</title>
+  </head>
+  <body>
+    <script type="module">
+      const worker = new Worker("./worker.js", { type: "module" });
+      worker.onmessage = ({ data }) => {
+        console.log("Worker responded with", data);
+      };
+      worker.postMessage("Hello World");
+    </script>
+  </body>
+</html>
